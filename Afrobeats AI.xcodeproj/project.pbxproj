@@ -14,6 +14,12 @@
 		5788D0DD2C1569E60095647E /* Afrobeats_AITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0DC2C1569E60095647E /* Afrobeats_AITests.swift */; };
 		5788D0E72C1569E60095647E /* Afrobeats_AIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0E62C1569E60095647E /* Afrobeats_AIUITests.swift */; };
 		5788D0E92C1569E60095647E /* Afrobeats_AIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0E82C1569E60095647E /* Afrobeats_AIUITestsLaunchTests.swift */; };
+		5788D0F62C156B070095647E /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0F52C156B070095647E /* LyricsView.swift */; };
+		5788D0F82C156B9E0095647E /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0F72C156B9E0095647E /* SideMenu.swift */; };
+		5788D0FA2C156BF50095647E /* LyricsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0F92C156BF50095647E /* LyricsViewModel.swift */; };
+		5788D0FE2C156C3B0095647E /* LyricsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0FD2C156C3B0095647E /* LyricsNetworkManager.swift */; };
+		5788D1002C156C4F0095647E /* LyricsResponse .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0FF2C156C4F0095647E /* LyricsResponse .swift */; };
+		5788D1022C156C810095647E /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D1012C156C810095647E /* Extenstions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		5788D0E22C1569E60095647E /* Afrobeats AIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Afrobeats AIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5788D0E62C1569E60095647E /* Afrobeats_AIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Afrobeats_AIUITests.swift; sourceTree = "<group>"; };
 		5788D0E82C1569E60095647E /* Afrobeats_AIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Afrobeats_AIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5788D0F52C156B070095647E /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
+		5788D0F72C156B9E0095647E /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		5788D0F92C156BF50095647E /* LyricsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyricsViewModel.swift; sourceTree = "<group>"; };
+		5788D0FD2C156C3B0095647E /* LyricsNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyricsNetworkManager.swift; sourceTree = "<group>"; };
+		5788D0FF2C156C4F0095647E /* LyricsResponse .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LyricsResponse .swift"; sourceTree = "<group>"; };
+		5788D1012C156C810095647E /* Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,12 @@
 			children = (
 				5788D0CB2C1569E40095647E /* Afrobeats_AIApp.swift */,
 				5788D0CD2C1569E40095647E /* ContentView.swift */,
+				5788D0F52C156B070095647E /* LyricsView.swift */,
+				5788D0F92C156BF50095647E /* LyricsViewModel.swift */,
+				5788D0FD2C156C3B0095647E /* LyricsNetworkManager.swift */,
+				5788D0FF2C156C4F0095647E /* LyricsResponse .swift */,
+				5788D0F72C156B9E0095647E /* SideMenu.swift */,
+				5788D1012C156C810095647E /* Extenstions.swift */,
 				5788D0CF2C1569E60095647E /* Assets.xcassets */,
 				5788D0D12C1569E60095647E /* Preview Content */,
 			);
@@ -257,8 +275,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5788D1022C156C810095647E /* Extenstions.swift in Sources */,
+				5788D0FE2C156C3B0095647E /* LyricsNetworkManager.swift in Sources */,
 				5788D0CE2C1569E40095647E /* ContentView.swift in Sources */,
+				5788D0F62C156B070095647E /* LyricsView.swift in Sources */,
+				5788D0FA2C156BF50095647E /* LyricsViewModel.swift in Sources */,
+				5788D1002C156C4F0095647E /* LyricsResponse .swift in Sources */,
 				5788D0CC2C1569E40095647E /* Afrobeats_AIApp.swift in Sources */,
+				5788D0F82C156B9E0095647E /* SideMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
