@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5788D0CC2C1569E40095647E /* Afrobeats_AIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0CB2C1569E40095647E /* Afrobeats_AIApp.swift */; };
+		5788D0CE2C1569E40095647E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0CD2C1569E40095647E /* ContentView.swift */; };
+		5788D0D02C1569E60095647E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5788D0CF2C1569E60095647E /* Assets.xcassets */; };
+		5788D0D32C1569E60095647E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5788D0D22C1569E60095647E /* Preview Assets.xcassets */; };
+		5788D0DD2C1569E60095647E /* Afrobeats_AITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0DC2C1569E60095647E /* Afrobeats_AITests.swift */; };
+		5788D0E72C1569E60095647E /* Afrobeats_AIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0E62C1569E60095647E /* Afrobeats_AIUITests.swift */; };
+		5788D0E92C1569E60095647E /* Afrobeats_AIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0E82C1569E60095647E /* Afrobeats_AIUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5788D0D92C1569E60095647E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5788D0C02C1569E40095647E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5788D0C72C1569E40095647E;
+			remoteInfo = "Afrobeats AI";
+		};
+		5788D0E32C1569E60095647E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5788D0C02C1569E40095647E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5788D0C72C1569E40095647E;
+			remoteInfo = "Afrobeats AI";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5788D0C82C1569E40095647E /* Afrobeats AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Afrobeats AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5788D0CB2C1569E40095647E /* Afrobeats_AIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Afrobeats_AIApp.swift; sourceTree = "<group>"; };
+		5788D0CD2C1569E40095647E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5788D0CF2C1569E60095647E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5788D0D22C1569E60095647E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5788D0D82C1569E60095647E /* Afrobeats AITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Afrobeats AITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5788D0DC2C1569E60095647E /* Afrobeats_AITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Afrobeats_AITests.swift; sourceTree = "<group>"; };
+		5788D0E22C1569E60095647E /* Afrobeats AIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Afrobeats AIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5788D0E62C1569E60095647E /* Afrobeats_AIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Afrobeats_AIUITests.swift; sourceTree = "<group>"; };
+		5788D0E82C1569E60095647E /* Afrobeats_AIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Afrobeats_AIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5788D0C52C1569E40095647E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5788D0D52C1569E60095647E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5788D0DF2C1569E60095647E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5788D0BF2C1569E40095647E = {
+			isa = PBXGroup;
+			children = (
+				5788D0CA2C1569E40095647E /* Afrobeats AI */,
+				5788D0DB2C1569E60095647E /* Afrobeats AITests */,
+				5788D0E52C1569E60095647E /* Afrobeats AIUITests */,
+				5788D0C92C1569E40095647E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5788D0C92C1569E40095647E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5788D0C82C1569E40095647E /* Afrobeats AI.app */,
+				5788D0D82C1569E60095647E /* Afrobeats AITests.xctest */,
+				5788D0E22C1569E60095647E /* Afrobeats AIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5788D0CA2C1569E40095647E /* Afrobeats AI */ = {
+			isa = PBXGroup;
+			children = (
+				5788D0CB2C1569E40095647E /* Afrobeats_AIApp.swift */,
+				5788D0CD2C1569E40095647E /* ContentView.swift */,
+				5788D0CF2C1569E60095647E /* Assets.xcassets */,
+				5788D0D12C1569E60095647E /* Preview Content */,
+			);
+			path = "Afrobeats AI";
+			sourceTree = "<group>";
+		};
+		5788D0D12C1569E60095647E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5788D0D22C1569E60095647E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5788D0DB2C1569E60095647E /* Afrobeats AITests */ = {
+			isa = PBXGroup;
+			children = (
+				5788D0DC2C1569E60095647E /* Afrobeats_AITests.swift */,
+			);
+			path = "Afrobeats AITests";
+			sourceTree = "<group>";
+		};
+		5788D0E52C1569E60095647E /* Afrobeats AIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5788D0E62C1569E60095647E /* Afrobeats_AIUITests.swift */,
+				5788D0E82C1569E60095647E /* Afrobeats_AIUITestsLaunchTests.swift */,
+			);
+			path = "Afrobeats AIUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5788D0C72C1569E40095647E /* Afrobeats AI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5788D0EC2C1569E60095647E /* Build configuration list for PBXNativeTarget "Afrobeats AI" */;
+			buildPhases = (
+				5788D0C42C1569E40095647E /* Sources */,
+				5788D0C52C1569E40095647E /* Frameworks */,
+				5788D0C62C1569E40095647E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Afrobeats AI";
+			productName = "Afrobeats AI";
+			productReference = 5788D0C82C1569E40095647E /* Afrobeats AI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5788D0D72C1569E60095647E /* Afrobeats AITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5788D0EF2C1569E60095647E /* Build configuration list for PBXNativeTarget "Afrobeats AITests" */;
+			buildPhases = (
+				5788D0D42C1569E60095647E /* Sources */,
+				5788D0D52C1569E60095647E /* Frameworks */,
+				5788D0D62C1569E60095647E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5788D0DA2C1569E60095647E /* PBXTargetDependency */,
+			);
+			name = "Afrobeats AITests";
+			productName = "Afrobeats AITests";
+			productReference = 5788D0D82C1569E60095647E /* Afrobeats AITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5788D0E12C1569E60095647E /* Afrobeats AIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5788D0F22C1569E60095647E /* Build configuration list for PBXNativeTarget "Afrobeats AIUITests" */;
+			buildPhases = (
+				5788D0DE2C1569E60095647E /* Sources */,
+				5788D0DF2C1569E60095647E /* Frameworks */,
+				5788D0E02C1569E60095647E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5788D0E42C1569E60095647E /* PBXTargetDependency */,
+			);
+			name = "Afrobeats AIUITests";
+			productName = "Afrobeats AIUITests";
+			productReference = 5788D0E22C1569E60095647E /* Afrobeats AIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5788D0C02C1569E40095647E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					5788D0C72C1569E40095647E = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					5788D0D72C1569E60095647E = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 5788D0C72C1569E40095647E;
+					};
+					5788D0E12C1569E60095647E = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 5788D0C72C1569E40095647E;
+					};
+				};
+			};
+			buildConfigurationList = 5788D0C32C1569E40095647E /* Build configuration list for PBXProject "Afrobeats AI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5788D0BF2C1569E40095647E;
+			productRefGroup = 5788D0C92C1569E40095647E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5788D0C72C1569E40095647E /* Afrobeats AI */,
+				5788D0D72C1569E60095647E /* Afrobeats AITests */,
+				5788D0E12C1569E60095647E /* Afrobeats AIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5788D0C62C1569E40095647E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5788D0D32C1569E60095647E /* Preview Assets.xcassets in Resources */,
+				5788D0D02C1569E60095647E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5788D0D62C1569E60095647E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5788D0E02C1569E60095647E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5788D0C42C1569E40095647E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5788D0CE2C1569E40095647E /* ContentView.swift in Sources */,
+				5788D0CC2C1569E40095647E /* Afrobeats_AIApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5788D0D42C1569E60095647E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5788D0DD2C1569E60095647E /* Afrobeats_AITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5788D0DE2C1569E60095647E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5788D0E92C1569E60095647E /* Afrobeats_AIUITestsLaunchTests.swift in Sources */,
+				5788D0E72C1569E60095647E /* Afrobeats_AIUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5788D0DA2C1569E60095647E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5788D0C72C1569E40095647E /* Afrobeats AI */;
+			targetProxy = 5788D0D92C1569E60095647E /* PBXContainerItemProxy */;
+		};
+		5788D0E42C1569E60095647E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5788D0C72C1569E40095647E /* Afrobeats AI */;
+			targetProxy = 5788D0E32C1569E60095647E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5788D0EA2C1569E60095647E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5788D0EB2C1569E60095647E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5788D0ED2C1569E60095647E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Afrobeats AI/Preview Content\"";
+				DEVELOPMENT_TEAM = XP8B6WBPCD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "aaa.Afrobeats-AI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5788D0EE2C1569E60095647E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Afrobeats AI/Preview Content\"";
+				DEVELOPMENT_TEAM = XP8B6WBPCD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "aaa.Afrobeats-AI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5788D0F02C1569E60095647E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XP8B6WBPCD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "aaa.Afrobeats-AITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Afrobeats AI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Afrobeats AI";
+			};
+			name = Debug;
+		};
+		5788D0F12C1569E60095647E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XP8B6WBPCD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "aaa.Afrobeats-AITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Afrobeats AI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Afrobeats AI";
+			};
+			name = Release;
+		};
+		5788D0F32C1569E60095647E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XP8B6WBPCD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "aaa.Afrobeats-AIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Afrobeats AI";
+			};
+			name = Debug;
+		};
+		5788D0F42C1569E60095647E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XP8B6WBPCD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "aaa.Afrobeats-AIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Afrobeats AI";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5788D0C32C1569E40095647E /* Build configuration list for PBXProject "Afrobeats AI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5788D0EA2C1569E60095647E /* Debug */,
+				5788D0EB2C1569E60095647E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5788D0EC2C1569E60095647E /* Build configuration list for PBXNativeTarget "Afrobeats AI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5788D0ED2C1569E60095647E /* Debug */,
+				5788D0EE2C1569E60095647E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5788D0EF2C1569E60095647E /* Build configuration list for PBXNativeTarget "Afrobeats AITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5788D0F02C1569E60095647E /* Debug */,
+				5788D0F12C1569E60095647E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5788D0F22C1569E60095647E /* Build configuration list for PBXNativeTarget "Afrobeats AIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5788D0F32C1569E60095647E /* Debug */,
+				5788D0F42C1569E60095647E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5788D0C02C1569E40095647E /* Project object */;
+}
