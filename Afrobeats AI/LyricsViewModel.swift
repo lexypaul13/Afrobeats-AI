@@ -64,7 +64,7 @@ public class LyricsViewModel: ObservableObject {
                             self.errorMessage = "Translation failed: \(message)"
                         }
                     } else {
-                        self.errorMessage = "An error occurred. Please try again later."
+                        self.errorMessage = "An error occurred. Please try again."
                     }
                 }
             }
