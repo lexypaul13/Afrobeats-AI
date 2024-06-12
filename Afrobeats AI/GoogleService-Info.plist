@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAcYb1yLiaa8N7jIi4aoiqLV0aAUvM28uw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>893800905727</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Afrobeats-AI</string>
+	<key>PROJECT_ID</key>
+	<string>afrobeats-ai</string>
+	<key>STORAGE_BUCKET</key>
+	<string>afrobeats-ai.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:893800905727:ios:d95e2c9a291e198c2cc5ca</string>
+</dict>
+</plist>
