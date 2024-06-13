@@ -16,7 +16,6 @@ struct FeedbackView: View {
     @State private var comment: String = ""
 
     var body: some View {
-        NavigationView {
             Form {
                 Section(header: Text("Your Details")) {
                     TextField("Name", text: $name)
@@ -36,7 +35,7 @@ struct FeedbackView: View {
                 }
             }
             .navigationBarTitle("Feedback")
-        }
+        
     }
 
     private func submitFeedback() {
