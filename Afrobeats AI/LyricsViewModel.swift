@@ -42,7 +42,6 @@ public class LyricsViewModel: ObservableObject {
                 let translatedText = try await networkManager.getTranslation(input: selectedText)
                 DispatchQueue.main.async {
                     self.translation = translatedText
-//                    print(self.translation)
                     self.isLoading = false
                     self.errorMessage = ""
                 }

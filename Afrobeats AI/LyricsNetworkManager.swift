@@ -28,24 +28,30 @@ class LyricsNetworkManager {
     }
     
     func fetchLyrics(artist: String, title: String) async throws -> String {
-        let encodedArtist = artist.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        let encodedTitle = title.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        let endpoint = "\(baseURL)/\(encodedArtist)/\(encodedTitle)"
+        // Concatenate artist and title with a slash
+        let fullPath = "\(artist)/\(title)"
+        
+        // Encode the entire path
+        let encodedPath = fullPath.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        
+        // Construct the endpoint URL
+        let endpoint = "\(baseURL)/\(encodedPath)"
+        print("---->", endpoint)
         
         guard let url = URL(string: endpoint) else {
             throw NetworkError.invalidURL
         }
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        
+
         do {
             let (data, response) = try await session.data(for: request)
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 throw NetworkError.invalidResponse
             }
-            
+
             do {
                 let lyricsResponse = try JSONDecoder().decode(LyricsResponse.self, from: data)
                 return lyricsResponse.lyrics
@@ -56,6 +62,12 @@ class LyricsNetworkManager {
             throw NetworkError.requestFailed
         }
     }
+
+
+
+
+
+
     
     func getTranslation(input: String) async throws -> String {
         let parameters: [String: Any] = [
