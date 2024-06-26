@@ -12,7 +12,8 @@ struct SideMenu: View {
     var selectedLines: Set<Int>
     var lyrics: String
     @ObservedObject var viewModel: LyricsViewModel
-    
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -77,7 +78,10 @@ struct SideMenu: View {
 
 struct SideMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenu(isShowing: .constant(true), selectedLines: Set(arrayLiteral: 0, 1), lyrics: "Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3Line 1\nLine 2\nLine 3", viewModel: LyricsViewModel())
+        SideMenu(isShowing: .constant(true), selectedLines: Set(arrayLiteral: 0, 1), lyrics: "Line 1\nLine 2\nLine 3", viewModel: LyricsViewModel())
+            .preferredColorScheme(.dark)
+        
+        SideMenu(isShowing: .constant(true), selectedLines: Set(arrayLiteral: 0, 1), lyrics: "Line 1\nLine 2\nLine 3", viewModel: LyricsViewModel())
+            .preferredColorScheme(.light)
     }
 }
-

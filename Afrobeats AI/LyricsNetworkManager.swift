@@ -28,30 +28,26 @@ class LyricsNetworkManager {
     }
     
     func fetchLyrics(artist: String, title: String) async throws -> String {
-        // Concatenate artist and title with a slash
         let fullPath = "\(artist)/\(title)"
         
-        // Encode the entire path
-        let encodedPath = fullPath.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        
-        // Construct the endpoint URL
-        let endpoint = "\(baseURL)/\(encodedPath)"
-        print("---->", endpoint)
+        let endpoint = "\(baseURL)/\(artist)/\(title)"
+
+        print("----> endpoint: \(endpoint)")
         
         guard let url = URL(string: endpoint) else {
             throw NetworkError.invalidURL
         }
-
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-
+        
         do {
-            let (data, response) = try await session.data(for: request)
+            let (data, response) = try await URLSession.shared.data(for: request)
+    //        print("----> response: \(String(data: data, encoding: .utf8) as AnyObject)")
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 throw NetworkError.invalidResponse
             }
-
             do {
                 let lyricsResponse = try JSONDecoder().decode(LyricsResponse.self, from: data)
                 return lyricsResponse.lyrics
@@ -62,28 +58,25 @@ class LyricsNetworkManager {
             throw NetworkError.requestFailed
         }
     }
-
-
-
-
+   
 
 
     
     func getTranslation(input: String) async throws -> String {
         let parameters: [String: Any] = [
-            "model": "gpt-3.5-turbo-instruct",
-            "prompt": "Translate the following Afrobeats lyrics into concise English and provide cultural context: \n\n\(input)",
-            "temperature": 0.3,
-            "max_tokens": 200,
-            "top_p": 1,
-            "frequency_penalty": 0,
-            "presence_penalty": 0
-        ]
+                    "model": "gpt-3.5-turbo-instruct",
+                    "prompt": "Translate the following Afrobeats lyrics into concise, accurate English. Provide brief but insightful cultural context where relevant:\n\n\(input)\n\nTranslation:",
+                    "temperature": 0.2,
+                    "max_tokens": 300,
+                    "top_p": 0.95,
+                    "frequency_penalty": 0.1,
+                    "presence_penalty": 0.1
+                ]
         
         guard let url = URL(string: openAIBaseURL) else {
             throw NetworkError.invalidURL
         }
-        
+        print("URL--->", url)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = apiHeaders

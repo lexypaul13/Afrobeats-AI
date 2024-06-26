@@ -6,16 +6,14 @@
 //
 
 import SwiftUI
-
-import SwiftUI
-
 struct LyricsView: View {
     let artist: String
     let title: String
     @StateObject private var viewModel: LyricsViewModel
     @State private var showSideMenu = false
     @State private var selectedLines: Set<Int> = []
-    
+    @Environment(\.colorScheme) var colorScheme
+
     var isSideMenuEnabled: Bool {
         selectedLines.count == 5
     }
@@ -40,7 +38,7 @@ struct LyricsView: View {
                             let line = lines[index]
                             Text(String(line))
                                 .font(.system(size: 20, weight: .semibold))
-                                .foregroundColor(.black)
+                                .foregroundColor(.primary) // This ensures text is visible in both light and dark modes
                                 .textSelection(.enabled)
                                 .lineSpacing(20)
                                 .background(selectedLines.contains(index) ? Color(red: 1.0, green: 0.8, blue: 0.0) : Color.clear)
@@ -93,9 +91,19 @@ struct LyricsView: View {
                     }
                 }
         }
+        .background(Color(UIColor.systemBackground))
     }
 }
-#Preview {
-    LyricsView(artist: "wizkid", title: "balance")
+struct LyricsView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            LyricsView(artist: "wizkid", title: "balance")
+        }
+        .preferredColorScheme(.dark)
+        
+        NavigationView {
+            LyricsView(artist: "wizkid", title: "balance")
+        }
+        .preferredColorScheme(.light)
+    }
 }
-
