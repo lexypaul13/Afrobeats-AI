@@ -50,6 +50,9 @@
 		57B77CD52C1958A8002DE336 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 57B77CD42C1958A8002DE336 /* FirebaseStorage */; };
 		57B77CD72C1958A8002DE336 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 57B77CD62C1958A8002DE336 /* FirebaseStorageCombine-Community */; };
 		57B77CD92C1958A8002DE336 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 57B77CD82C1958A8002DE336 /* FirebaseVertexAI-Preview */; };
+		57C3620A2C2E751E0084919B /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C362092C2E751E0084919B /* Configuration.plist */; };
+		57C3620C2C2E78F60084919B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 57C3620B2C2E78F60084919B /* .gitignore */; };
+		57C3620E2C2E7A000084919B /* Configuration.plist.template".plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C3620D2C2E7A000084919B /* Configuration.plist.template".plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		5788D0FD2C156C3B0095647E /* LyricsNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyricsNetworkManager.swift; sourceTree = "<group>"; };
 		5788D0FF2C156C4F0095647E /* LyricsResponse .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LyricsResponse .swift"; sourceTree = "<group>"; };
 		5788D1012C156C810095647E /* Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
+		57C362092C2E751E0084919B /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		57C3620B2C2E78F60084919B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		57C3620D2C2E7A000084919B /* Configuration.plist.template".plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Configuration.plist.template\".plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,9 +181,12 @@
 				5788D0F72C156B9E0095647E /* SideMenu.swift */,
 				5781C52A2C18084100903A1F /* FeedbackView.swift */,
 				5788D1012C156C810095647E /* Extenstions.swift */,
+				57C362092C2E751E0084919B /* Configuration.plist */,
+				57C3620D2C2E7A000084919B /* Configuration.plist.template".plist */,
 				5781C52C2C1955B500903A1F /* GoogleService-Info.plist */,
 				5788D0CF2C1569E60095647E /* Assets.xcassets */,
 				5788D0D12C1569E60095647E /* Preview Content */,
+				57C3620B2C2E78F60084919B /* .gitignore */,
 			);
 			path = "Afrobeats AI";
 			sourceTree = "<group>";
@@ -344,7 +353,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C3620C2C2E78F60084919B /* .gitignore in Resources */,
 				5788D0D32C1569E60095647E /* Preview Assets.xcassets in Resources */,
+				57C3620A2C2E751E0084919B /* Configuration.plist in Resources */,
+				57C3620E2C2E7A000084919B /* Configuration.plist.template".plist in Resources */,
 				5788D0D02C1569E60095647E /* Assets.xcassets in Resources */,
 				5781C52D2C1955B600903A1F /* GoogleService-Info.plist in Resources */,
 			);

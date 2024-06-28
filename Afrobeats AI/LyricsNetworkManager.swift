@@ -28,36 +28,37 @@ class LyricsNetworkManager {
     }
     
     func fetchLyrics(artist: String, title: String) async throws -> String {
-        let fullPath = "\(artist)/\(title)"
-        
-        let endpoint = "\(baseURL)/\(artist)/\(title)"
-
-        print("----> endpoint: \(endpoint)")
-        
-        guard let url = URL(string: endpoint) else {
-            throw NetworkError.invalidURL
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-    //        print("----> response: \(String(data: data, encoding: .utf8) as AnyObject)")
+            let encodedArtist = artist.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? artist
+            let encodedTitle = title.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? title
             
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                throw NetworkError.invalidResponse
+            let endpoint = "\(baseURL)/\(encodedArtist)/\(encodedTitle)"
+            
+            print("----> endpoint: \(endpoint)")
+            
+            guard let url = URL(string: endpoint) else {
+                throw NetworkError.invalidURL
             }
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            
             do {
-                let lyricsResponse = try JSONDecoder().decode(LyricsResponse.self, from: data)
-                return lyricsResponse.lyrics
+                let (data, response) = try await URLSession.shared.data(for: request)
+                
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    throw NetworkError.invalidResponse
+                }
+                do {
+                    let lyricsResponse = try JSONDecoder().decode(LyricsResponse.self, from: data)
+                    return lyricsResponse.lyrics
+                } catch {
+                    throw NetworkError.decodingFailed
+                }
             } catch {
-                throw NetworkError.decodingFailed
+                throw NetworkError.requestFailed
             }
-        } catch {
-            throw NetworkError.requestFailed
         }
-    }
+
    
 
 

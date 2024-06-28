@@ -1,20 +1,20 @@
 import SwiftUI
 
-
 struct ContentView: View {
-    @State private var searchText = ""
-    @State private var selectedSong: (artist: String, title: String)?
     @StateObject private var viewModel = LyricsViewModel()
+    @State private var selectedSong: (artist: String, title: String)?
     
     var body: some View {
         TabView {
             NavigationStack {
                 VStack(spacing: 0) {
-                    searchBar
+                    artistSearchBar
+                    titleSearchBar
+                    searchButton
                     searchHistoryList
                 }
                 .background(Color(UIColor.systemBackground))
-                .navigationTitle("Search Artist")
+                .navigationTitle("Search Lyrics")
                 .navigationDestination(isPresented: Binding<Bool>(
                     get: { selectedSong != nil },
                     set: { _ in selectedSong = nil }
@@ -26,7 +26,7 @@ struct ContentView: View {
                 .dismissKeyboardOnDoubleTap()
             }
             .tabItem {
-                Label("Search Artist", systemImage: "magnifyingglass")
+                Label("Search Lyrics", systemImage: "magnifyingglass")
             }
             
             FeedbackView()
@@ -37,17 +37,47 @@ struct ContentView: View {
         .accentColor(.blue)
     }
     
-    private var searchBar: some View {
+    private var artistSearchBar: some View {
         HStack {
-            TextField("Search artist and song title", text: $searchText)
+            TextField("Enter artist name", text: $viewModel.artistSearchText)
                 .foregroundColor(.primary)
                 .padding(.horizontal, 10)
                 .padding(.vertical, 8)
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(8)
-                .onSubmit(performSearch)
         }
-        .padding()
+        .padding(.horizontal)
+        .padding(.top)
+    }
+    
+    private var titleSearchBar: some View {
+        HStack {
+            TextField("Enter song title", text: $viewModel.titleSearchText)
+                .foregroundColor(.primary)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 8)
+                .background(Color(UIColor.secondarySystemBackground))
+                .cornerRadius(8)
+        }
+        .padding(.horizontal)
+        .padding(.top, 8)
+    }
+    
+    private var searchButton: some View {
+        Button(action: {
+            Task {
+                await viewModel.searchLyrics()
+                selectedSong = (viewModel.artistSearchText, viewModel.titleSearchText)
+            }
+        }) {
+            Text("Search")
+                .foregroundColor(.white)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 10)
+                .background(Color.blue)
+                .cornerRadius(8)
+        }
+        .padding(.top, 16)
     }
     
     private var searchHistoryList: some View {
@@ -56,7 +86,12 @@ struct ContentView: View {
                 Text(searchText)
                     .foregroundColor(.primary)
                     .onTapGesture {
-                        selectSong(from: searchText)
+                        let components = searchText.components(separatedBy: " - ")
+                        if components.count == 2 {
+                            viewModel.artistSearchText = components[0]
+                            viewModel.titleSearchText = components[1]
+                            selectedSong = (components[0], components[1])
+                        }
                     }
             }
             .onDelete { indexSet in
@@ -64,21 +99,6 @@ struct ContentView: View {
             }
         }
         .listStyle(PlainListStyle())
-    }
-    
-    private func performSearch() {
-        let artist = viewModel.getArtist(from: searchText)
-        let title = viewModel.getTitle(from: searchText)
-        Task {
-            await viewModel.searchLyrics(artist: artist, title: title)
-        }
-        selectedSong = (artist, title)
-    }
-    
-    private func selectSong(from searchText: String) {
-        let artist = viewModel.getArtist(from: searchText)
-        let title = viewModel.getTitle(from: searchText)
-        selectedSong = (artist, title)
     }
 }
 

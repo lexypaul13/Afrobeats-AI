@@ -34,3 +34,14 @@ extension Color {
         )
     }
 }
+import Foundation
+
+struct Configuration {
+    static func value(for key: String) -> Any? {
+        guard let path = Bundle.main.path(forResource: "Configuration", ofType: "plist"),
+              let config = NSDictionary(contentsOfFile: path) else {
+            return nil
+        }
+        return config[key]
+    }
+}

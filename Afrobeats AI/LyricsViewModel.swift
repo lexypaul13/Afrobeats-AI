@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Combine
 
 public class LyricsViewModel: ObservableObject {
     @Published var lyrics: String = ""
@@ -15,74 +15,49 @@ public class LyricsViewModel: ObservableObject {
     @Published var recentSearches: [RecentSearch] = []
     @Published var searchHistory: [String] = []
     @Published var translation: String = ""
+    @Published var artistSearchText: String = ""
+    @Published var titleSearchText: String = ""
     
     private let networkManager: LyricsNetworkManager
     private let recentSearchesLimit = 10
+    private var cancellables = Set<AnyCancellable>()
     
-    init(networkManager: LyricsNetworkManager = LyricsNetworkManager(apiKey: "")) {
-        self.networkManager = networkManager
-    }
-    
-    func fetchTranslation(for selectedLines: Set<Int>) {
-        print("fetchTranslation called with selectedLines count: \(selectedLines.count)")
-
-        guard selectedLines.count == 5 else {
-             DispatchQueue.main.async {
-                 self.errorMessage = "Please select 5 lines to get the translation."
-                 self.isLoading = false
-             }
-             return
-         }
-        let lines = lyrics.split(separator: "\n")
-        let selectedText = selectedLines.map { String(lines[$0]) }.joined(separator: "\n")
-
-        isLoading = true
-        Task {
-            do {
-                let translatedText = try await networkManager.getTranslation(input: selectedText)
-                DispatchQueue.main.async {
-                    self.translation = translatedText
-                    self.isLoading = false
-                    self.errorMessage = ""
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    self.translation = ""
-                    self.isLoading = false
-                    if let networkError = error as? NetworkError {
-                        switch networkError {
-                        case .invalidURL:
-                            self.errorMessage = "Invalid URL. Please check the API endpoint."
-                        case .requestFailed:
-                            self.errorMessage = "Request failed. Please try again later."
-                        case .invalidResponse:
-                            self.errorMessage = "Invalid response from the server. Please try again."
-                        case .decodingFailed:
-                            self.errorMessage = "Failed to decode the response. Please contact support."
-                        case .translationError(let message):
-                            self.errorMessage = "Translation failed: \(message)"
-                        }
-                    } else {
-                        self.errorMessage = "An error occurred. Please try again."
-                    }
-                }
+    init(networkManager: LyricsNetworkManager? = nil) {
+        if let networkManager = networkManager {
+            self.networkManager = networkManager
+        } else {
+            guard let path = Bundle.main.path(
+                forResource: "Configuration",
+                ofType: "plist"
+            ), let dict = NSDictionary(
+                contentsOfFile: path
+            ),
+                  let apiKey = dict["API_KEY"] as? String
+            else {
+                fatalError("Configuration.plist not found in bundle")
             }
+            self.networkManager = LyricsNetworkManager(apiKey: apiKey)
         }
     }
     
     @MainActor
-    func searchLyrics(artist: String, title: String) async {
+    func searchLyrics() async {
+        guard !artistSearchText.isEmpty && !titleSearchText.isEmpty else {
+            errorMessage = "Please enter both artist and song title"
+            return
+        }
+        
         isLoading = true
         errorMessage = ""
         
-        let searchText = "\(artist) \(title)"
+        let searchText = "\(artistSearchText) - \(titleSearchText)"
         addToSearchHistory(searchText)
         
         do {
-            let fetchedLyrics = try await networkManager.fetchLyrics(artist: artist, title: title)
+            let fetchedLyrics = try await networkManager.fetchLyrics(artist: artistSearchText, title: titleSearchText)
             lyrics = fetchedLyrics
             isLoading = false
-            addToRecentSearches(artist: artist, title: title)
+            addToRecentSearches(artist: artistSearchText, title: titleSearchText)
         } catch {
             errorMessage = handleError(error)
             isLoading = false
@@ -97,33 +72,50 @@ public class LyricsViewModel: ObservableObject {
             searchHistory.removeLast()
         }
     }
-    
-    private func validateSearchText(_ searchText: String) -> (artist: String, title: String)? {
-        let components = searchText.components(separatedBy: " - ")
-        guard components.count == 2 else {
-            return nil
+    func fetchTranslation(for selectedLines: Set<Int>) {
+            guard selectedLines.count == 5 else {
+                errorMessage = "Please select 5 lines to get the translation."
+                return
+            }
+            
+            let lines = lyrics.split(separator: "\n")
+            let selectedText = selectedLines.map { String(lines[$0]) }.joined(separator: "\n")
+            
+            isLoading = true
+            Task {
+                do {
+                    let translatedText = try await networkManager.getTranslation(input: selectedText)
+                    await MainActor.run {
+                        self.translation = translatedText
+                        self.isLoading = false
+                        self.errorMessage = ""
+                    }
+                } catch {
+                    await MainActor.run {
+                        self.translation = ""
+                        self.isLoading = false
+                        self.errorMessage = handleError(error)
+                    }
+                }
+            }
         }
-        let artist = components[0].trimmingCharacters(in: .whitespacesAndNewlines)
-        let title = components[1].trimmingCharacters(in: .whitespacesAndNewlines)
-        return (artist, title)
-    }
     
     private func handleError(_ error: Error) -> String {
         if let networkError = error as? NetworkError {
             switch networkError {
             case .invalidURL:
-                return "Invalid URL. Please check the API endpoint."
+                return "Invalid URL. Please check the artist and song title."
             case .requestFailed:
-                return "Request failed. Please try again later."
+                return "Request failed. Please check your internet connection and try again."
             case .invalidResponse:
-                return "Invalid response from the server. Please try again."
+                return "Invalid response from the server. Please try again later."
             case .decodingFailed:
-                return "Failed to decode the response. Please contact support."
-            case .translationError(_):
-                return "Translation failed"
+                return "Failed to decode the response. Please try a different song."
+            case .translationError(let message):
+                return "Translation failed: \(message)"
             }
         } else {
-            return "An error occurred. Please try again later."
+            return "An unexpected error occurred. Please try again."
         }
     }
     
@@ -141,6 +133,18 @@ public class LyricsViewModel: ObservableObject {
     func deleteSearchHistory(at indexSet: IndexSet) {
         searchHistory.remove(atOffsets: indexSet)
     }
+    
+    private func validateSearchText(_ searchText: String) -> (artist: String, title: String)? {
+        let components = searchText.components(separatedBy: " - ")
+        guard components.count == 2 else {
+            return nil
+        }
+        let artist = components[0].trimmingCharacters(in: .whitespacesAndNewlines)
+        let title = components[1].trimmingCharacters(in: .whitespacesAndNewlines)
+        return (artist, title)
+    }
+    
+
     
     func getArtist(from searchText: String) -> String {
         let components = searchText.components(separatedBy: " ")

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 struct LyricsView: View {
     let artist: String
     let title: String
@@ -38,7 +39,7 @@ struct LyricsView: View {
                             let line = lines[index]
                             Text(String(line))
                                 .font(.system(size: 20, weight: .semibold))
-                                .foregroundColor(.primary) // This ensures text is visible in both light and dark modes
+                                .foregroundColor(.primary)
                                 .textSelection(.enabled)
                                 .lineSpacing(20)
                                 .background(selectedLines.contains(index) ? Color(red: 1.0, green: 0.8, blue: 0.0) : Color.clear)
@@ -71,11 +72,14 @@ struct LyricsView: View {
             }
             .onAppear {
                 Task {
-                    await viewModel.searchLyrics(artist: artist, title: title)
+                    viewModel.artistSearchText = artist
+                    viewModel.titleSearchText = title
+                    await viewModel.searchLyrics()
                 }
             }
             
-            SideMenu(isShowing: $showSideMenu, selectedLines: selectedLines, lyrics: viewModel.lyrics, viewModel: viewModel)
+            SideMenu(isShowing: $showSideMenu, selectedLines: selectedLines,
+                     lyrics: viewModel.lyrics, viewModel: viewModel)
                 .disabled(!isSideMenuEnabled)
                 .onChange(of: selectedLines) { _ in
                     if selectedLines.count == 5 {
@@ -94,15 +98,16 @@ struct LyricsView: View {
         .background(Color(UIColor.systemBackground))
     }
 }
+
 struct LyricsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LyricsView(artist: "wizkid", title: "balance")
+            LyricsView(artist: "Burna Boy", title: "City Boys")
         }
         .preferredColorScheme(.dark)
         
         NavigationView {
-            LyricsView(artist: "wizkid", title: "balance")
+            LyricsView(artist: "Burna Boy", title: "City Boys")
         }
         .preferredColorScheme(.light)
     }
