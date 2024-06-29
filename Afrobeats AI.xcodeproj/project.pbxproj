@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5746342B2C2E820D001C9F64 /* Configuration.plist.template in Resources */ = {isa = PBXBuildFile; fileRef = 5746342A2C2E820D001C9F64 /* Configuration.plist.template */; };
 		5781C52B2C18084100903A1F /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781C52A2C18084100903A1F /* FeedbackView.swift */; };
 		5781C52D2C1955B600903A1F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5781C52C2C1955B500903A1F /* GoogleService-Info.plist */; };
 		5788D0CC2C1569E40095647E /* Afrobeats_AIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5788D0CB2C1569E40095647E /* Afrobeats_AIApp.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5746342A2C2E820D001C9F64 /* Configuration.plist.template */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Configuration.plist.template; sourceTree = "<group>"; };
 		5781C52A2C18084100903A1F /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		5781C52C2C1955B500903A1F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5788D0C82C1569E40095647E /* Afrobeats AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Afrobeats AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +184,7 @@
 				5781C52A2C18084100903A1F /* FeedbackView.swift */,
 				5788D1012C156C810095647E /* Extenstions.swift */,
 				57C362092C2E751E0084919B /* Configuration.plist */,
+				5746342A2C2E820D001C9F64 /* Configuration.plist.template */,
 				57C3620D2C2E7A000084919B /* Configuration.plist.template".plist */,
 				5781C52C2C1955B500903A1F /* GoogleService-Info.plist */,
 				5788D0CF2C1569E60095647E /* Assets.xcassets */,
@@ -359,6 +362,7 @@
 				57C3620E2C2E7A000084919B /* Configuration.plist.template".plist in Resources */,
 				5788D0D02C1569E60095647E /* Assets.xcassets in Resources */,
 				5781C52D2C1955B600903A1F /* GoogleService-Info.plist in Resources */,
+				5746342B2C2E820D001C9F64 /* Configuration.plist.template in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
