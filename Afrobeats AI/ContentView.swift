@@ -78,6 +78,7 @@ struct ContentView: View {
                 .cornerRadius(8)
         }
         .padding(.top, 16)
+        .padding(.bottom, 25)
     }
     
     private var searchHistoryList: some View {
