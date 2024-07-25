@@ -71,10 +71,6 @@ class LyricsNetworkManager {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
         
-        print("URL: \(url)")
-        print("Request Headers: \(request.allHTTPHeaderFields ?? [:])")
-        print("Request Body: \(parameters)")
-        
         do {
             let (data, response) = try await session.data(for: request)
             
