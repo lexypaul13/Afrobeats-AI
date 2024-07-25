@@ -33,6 +33,11 @@ struct LyricsView: View {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle())
                             .frame(maxWidth: .infinity, alignment: .center)
+                    } else if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(.red)
+                            .multilineTextAlignment(.center)
+                            .padding()
                     } else {
                         let lines = viewModel.lyrics.split(separator: "\n")
                         ForEach(lines.indices, id: \.self) { index in
@@ -98,6 +103,7 @@ struct LyricsView: View {
         .background(Color(UIColor.systemBackground))
     }
 }
+
 
 struct LyricsView_Previews: PreviewProvider {
     static var previews: some View {

@@ -1,10 +1,3 @@
-//
-//  LyricsViewModel.swift
-//  AfroBeats AI
-//
-//  Created by Alex Paul on 3/19/24.
-//
-
 import Foundation
 import Combine
 
@@ -72,33 +65,34 @@ public class LyricsViewModel: ObservableObject {
             searchHistory.removeLast()
         }
     }
+    
     func fetchTranslation(for selectedLines: Set<Int>) {
-            guard selectedLines.count == 5 else {
-                errorMessage = "Please select 5 lines to get the translation."
-                return
-            }
-            
-            let lines = lyrics.split(separator: "\n")
-            let selectedText = selectedLines.map { String(lines[$0]) }.joined(separator: "\n")
-            
-            isLoading = true
-            Task {
-                do {
-                    let translatedText = try await networkManager.getTranslation(input: selectedText)
-                    await MainActor.run {
-                        self.translation = translatedText
-                        self.isLoading = false
-                        self.errorMessage = ""
-                    }
-                } catch {
-                    await MainActor.run {
-                        self.translation = ""
-                        self.isLoading = false
-                        self.errorMessage = handleError(error)
-                    }
+        guard selectedLines.count == 5 else {
+            errorMessage = "Please select 5 lines to get the translation."
+            return
+        }
+        
+        let lines = lyrics.split(separator: "\n")
+        let selectedText = selectedLines.map { String(lines[$0]) }.joined(separator: "\n")
+        
+        isLoading = true
+        Task {
+            do {
+                let translatedText = try await networkManager.getTranslation(input: selectedText)
+                await MainActor.run {
+                    self.translation = translatedText
+                    self.isLoading = false
+                    self.errorMessage = ""
+                }
+            } catch {
+                await MainActor.run {
+                    self.translation = ""
+                    self.isLoading = false
+                    self.errorMessage = handleError(error)
                 }
             }
         }
+    }
     
     private func handleError(_ error: Error) -> String {
         if let networkError = error as? NetworkError {
@@ -106,7 +100,7 @@ public class LyricsViewModel: ObservableObject {
             case .invalidURL:
                 return "Invalid URL. Please check the artist and song title."
             case .requestFailed:
-                return "Request failed. Please check your internet connection and try again."
+                return "Song not found. Please check the spelling of the artist and song title."
             case .invalidResponse:
                 return "Invalid response from the server. Please try again later."
             case .decodingFailed:
@@ -144,8 +138,6 @@ public class LyricsViewModel: ObservableObject {
         return (artist, title)
     }
     
-
-    
     func getArtist(from searchText: String) -> String {
         let components = searchText.components(separatedBy: " ")
         return components.first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -160,4 +152,3 @@ public class LyricsViewModel: ObservableObject {
         }
     }
 }
-

@@ -23,7 +23,7 @@ struct ContentView: View {
                         LyricsView(artist: song.artist, title: song.title)
                     }
                 }
-                .dismissKeyboardOnDoubleTap()
+                //.dismissKeyboardOnDoubleTap()
             }
             .tabItem {
                 Label("Search Lyrics", systemImage: "magnifyingglass")
