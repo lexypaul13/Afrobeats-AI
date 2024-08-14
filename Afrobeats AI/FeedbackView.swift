@@ -21,8 +21,17 @@ struct FeedbackView: View {
             }
 
             Section(header: Text("Your Feedback")) {
-                TextEditor(text: $comment)
-                    .frame(height: 200)
+                ZStack(alignment: .topLeading) {
+                    if comment.isEmpty {
+                        Text("Enter your feedback and feature requests...")
+                            .foregroundColor(.gray)
+                            .padding(.top, 8)
+                            .padding(.horizontal, 4)
+                    }
+                    TextEditor(text: $comment)
+                        .frame(height: 200)
+                        .padding(4)
+                }
             }
 
             Button(action: submitFeedback) {
@@ -76,7 +85,6 @@ struct FeedbackView: View {
     }
 }
 
-
 struct FeedbackView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -90,3 +98,4 @@ struct FeedbackView_Previews: PreviewProvider {
         .preferredColorScheme(.light)
     }
 }
+
